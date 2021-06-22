@@ -1,0 +1,22 @@
+<!-- *ngFor="let trainee of trainees" -->
+<td>{{profile?.id}}</td>
+<td>{{profile?.firstName}} {{profile?.lastName}} </td>
+<td>{{profile?.email}}</td>
+<td>{{profile?.jobTitle}}</td>
+<td>{{profile?.previousEmployer}}</td>
+<td>{{profile?.currentEmployer}}</td>
+
+<td>
+  <a class="btn btn-danger" routerLinkActive="active" routerLink="/profiles/details/{{profile?.id}}">
+    Profile Details
+  </a>
+|
+  <a class="btn btn-danger" routerLinkActive="active" routerLink="/profiles/edit/{{profile?.id}}">
+    Edit Profile
+  </a>
+
+|
+  <button class="btn btn-danger" (click)="delete()">
+    Delete Profile
+  </button>
+</td>

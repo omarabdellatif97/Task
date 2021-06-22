@@ -1,0 +1,73 @@
+<div class="row .no-gutters justify-content-center">
+  <div class="col-6">
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Id
+      </dt>
+      <dd class="col-6">
+        {{profile?.id}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Full Name
+      </dt>
+      <dd class="col-6">
+        {{profile?.firstName}}  {{profile?.lastName}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Birth Date
+      </dt>
+      <dd class="col-6">
+        {{profile?.birthDate}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Email
+      </dt>
+      <dd class="col-6">
+        {{profile?.email}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Phone
+      </dt>
+      <dd class="col-6">
+        {{profile?.mobile}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Current Employer
+      </dt>
+      <dd class="col-6">
+        {{profile?.currentEmployer}}
+      </dd>
+    </dl>
+    <dl class="row justify-content-center">
+      <dt class="col-6">
+        Previous Employer
+      </dt>
+      <dd class="col-6">
+        {{profile?.previousEmployer}}
+      </dd>
+    </dl>
+
+    <dl class="row">
+      <dt class="col-4">
+        Skills
+      </dt>
+      <dd class="col-8">
+          <tag-input [disable]="true" [placeholder]="''" [secondaryPlaceholder]="'No Skills'" [ngModel]="profile?.skills"
+                     [identifyBy]="'skillName'" [displayBy]="'skillName'" name="skills" style="font-size: x-large;font-weight: bolder;">
+
+          </tag-input>
+      </dd>
+    </dl>
+
+  </div>
+</div>

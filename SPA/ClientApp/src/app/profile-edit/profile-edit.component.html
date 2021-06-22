@@ -1,0 +1,78 @@
+<div class="row no-gutters">
+  <form (ngSubmit)="onSubmit(f)" class="col-12" #f="ngForm">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="fname" class="col-3">First Name</label>
+          <input required [(ngModel)]="profile.firstName" type="text" id="fname" name="fname"
+            class="form-control col-9" />
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="lname" class="col-3">Last Name</label>
+          <input required [(ngModel)]="profile.lastName" type="text" id="lname" name="lname"
+            class="form-control col-9" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="email" class="col-3">Email</label>
+          <input required [(ngModel)]="profile.email" type="email" id="email" name="email" class="form-control col-9" />
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="mobile" class="col-3">Mobile</label>
+          <input required [(ngModel)]="profile.mobile" type="text" id="mobile" name="mobile"
+            class="form-control col-9" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="bdate" class="col-3">Birth Date</label>
+          <input required [ngModel]="profile.birthDate | date:'yyyy-MM-dd'" (ngModelChange)="profile.birthDate = $event"
+            type="date" at id="bdate" name="bdate" class="form-control col-9" />
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="jtitle" class="col-3">Job Title</label>
+          <input required [(ngModel)]="profile.jobTitle" type="text" id="jtitle" name="jtitle"
+            class="form-control col-9" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="cemp" class="col-3">Current Employer</label>
+          <input required [(ngModel)]="profile.currentEmployer" type="text" id="cemp" name="cemp"
+            class="form-control col-9" />
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group row no-gutters">
+          <label for="pemp" class="col-3">Previous Employer</label>
+          <input required [(ngModel)]="profile.previousEmployer" type="text" id="pemp" name="pemp"
+            class="form-control col-9" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <tag-input [placeholder]="'skill'" [secondaryPlaceholder]="'Enter candidate skills'" [(ngModel)]="profile.skills"
+          [identifyBy]="'skillName'" [displayBy]="'skillName'" name="skills"></tag-input>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <button class="btn-primary btn" type="submit">Edit Profile</button>
+    </div>
+  </form>
+</div>

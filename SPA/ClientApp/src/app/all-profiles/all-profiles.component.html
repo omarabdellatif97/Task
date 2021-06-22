@@ -1,0 +1,51 @@
+<div class="row no-gutters">
+  <div class="col-12">
+    <div class="row no-gutters">
+      <div class="col-5">
+        <div class="form-group">
+          <input class="form-control col-8" type="text" name="skillsearch" id="skillsearch" [(ngModel)]="skillSearch">
+          <button class="btn btn-info" (click)="searchSkills()">Search by Skills</button>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="form-group">
+          <input class="form-control col-8" type="text" name="skillsearch" id="skillsearch" [(ngModel)]="titleSearch">
+          <button class="btn btn-info" (click)="searchTitle()">Search by Job Title</button>
+        </div>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-danger" (click)="reset()">Reset Search</button>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Full Name</td>
+            <td>Email</td>
+            <td>Job Title</td>
+            <td>Previous Employer</td>
+            <td>Current Employer</td>
+            <td></td>
+        
+          </tr>
+        </thead>
+        <tbody>
+          <tr app-profile *ngFor="let profile of profiles" [profile]="profile" (profileDeleted)="profileDeleted()"></tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="row no-gutters justify-content-center mt-3">
+      <div class="col-1">
+        <div class="row g-0 justify-content-center mt-5">
+          <a class="btn btn-dark" routerLink="/profiles/add/">Add New Profile</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
